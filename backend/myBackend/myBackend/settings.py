@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4au59m-6#m#5v@yxq5i4f=ohxv7w7e3+)m27xz(99l_43r8!i=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +41,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+        'rest_framework.parsers.JSONParser',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

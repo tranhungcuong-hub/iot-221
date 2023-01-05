@@ -1,10 +1,15 @@
 from rest_framework import serializers
 
-from data.models import Led, humidity, temp, light
+from data.models import Led, humidity, temp, light, Pump
 
 class LedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Led
+        fields = ['id', 'value', 'created_at', 'created_epoch', 'expiration']
+
+class PumpSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pump
         fields = ['id', 'value', 'created_at', 'created_epoch', 'expiration']
 
 class HumiditySerializer(serializers.ModelSerializer):

@@ -1,0 +1,6 @@
+# Environment
+backend/env/
+
+# DB
+db.sqlite3
+migrations/
